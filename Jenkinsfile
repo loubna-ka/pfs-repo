@@ -26,9 +26,9 @@ node {
     }
     
     // Étape 5 : Déclenchement d'un autre job Jenkins
-    stage('Trigger ManifestUpdate') {
-        echo "Triggering the updatemanifest job"
-        build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+    stage('Trigger manifest pipeline') {
+        echo "Triggering the manifest pipeline job"
+        build job: 'manifest pipeline', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
     }
 }
 
